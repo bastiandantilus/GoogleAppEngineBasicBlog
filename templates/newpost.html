@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>New Post</title>
+	<link type="text/css" rel="stylesheet" href="/static/blog.css" />
+
+  </head>
+
+  <body>
+    <h1>New Post</h1>
+    <form method="post">
+        <div>
+			<label>Subject</label>
+			<input type="text" name="subject" value="{{subject}}">
+		</div>
+		
+		<div>
+			<label>Content</label>
+			<textarea name="content">{{Content}}</textarea>
+		</div>
+		
+		<div class="error">{{error}}</div>
+		
+		<input type="submit">
+    </form>
+	
+  </body>
+
+</html>

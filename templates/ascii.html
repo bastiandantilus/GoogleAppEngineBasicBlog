@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>/ascii/</title>
+    <style type="text/css">
+		body {
+			font-family: sans-serif;
+			width: 800px;
+			margin: 0px auto;
+			padding: 10px;
+		}
+			
+		label {display:block; font-size: 20px;}
+		.error {color: red}
+
+		input[type=text] {
+			width: 400px;
+			font-size: 20px;
+			padding: 2px;
+		}
+		
+		textarea {
+			width: 400px;
+			height: 200px;
+			font-size: 17px;
+			font-family: monospace;
+		}
+		
+		input[type=submit] {
+			font-size: 24px;
+		}
+		
+		hr { margin: 20px auto; }
+		
+		.art + .art {
+			margin-top: 20px;
+		}
+		
+		.art-title {
+			font-weight: bold;
+			font-size: 20px;
+		}
+		
+		.art-body {
+			margin: 0;
+			font-size: 18px;
+			letter-spacing: -4px;
+			line-height:.8em;
+		}
+		
+		.art-body:hover {
+			background: black;
+			color: white;
+		}
+		
+		.art-body:active {
+			font-size: 10px;
+			letter-spacing: 0px;
+		}
+		
+    </style>
+
+  </head>
+
+  <body>
+    <h1>/ascii/</h1>
+    <form method="post">
+        <div>
+			<label>Title</label>
+			<input type="text" name="title" value="{{title}}">
+		</div>
+		
+		<div>
+			<label>Art</label>
+			<textarea name="art">{{art}}</textarea>
+		</div>
+		
+		<div class="error">{{error}}</div>
+		
+		<input type="submit">
+    </form>
+	
+	<hr>
+	
+	{% for art in arts %}
+		<div class="art">
+			<div class="art-title">{{art.title}}</div>
+			<pre class="art-body">{{art.art}}</pre>
+		</div>
+	{% endfor %}
+	
+  </body>
+
+</html>
