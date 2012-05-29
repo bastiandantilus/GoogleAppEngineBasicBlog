@@ -29,11 +29,11 @@
 					{{post.subject}}
 				</a>
 				<div class="post-date">
-					{{post.created}}
+					{{post.created.strftime("%b %d, %Y")}}
 				</div>
 			</div>
 			<div class="post-content">
-				{{post.content}}
+				{{post.content.replace('\n', '<br>') | safe}}
 			</div>
 		</div>
 		<br><br>
